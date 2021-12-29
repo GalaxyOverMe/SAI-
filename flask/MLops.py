@@ -42,13 +42,13 @@ UPLOAD_FOLDER = os.path.join(os.getcwd(),'flask/static/img/')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # 학습을 위한 모델 불러오기 
-MODEL_PATH = os.path.join(os.getcwd(),'flask/mnist_mlp_model.h5')
+MODEL_PATH = os.path.join(os.getcwd(),'classification_model.h5')
 model = load_model(MODEL_PATH)
 model.make_predict_function()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('h5_model_index.html')
+    return render_template('MLops_index.html')
 
 
 @app.route('/predict', methods=['GET', 'POST'])
